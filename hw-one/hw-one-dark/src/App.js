@@ -2,6 +2,9 @@
 import './App.css';
 import React from "react";
 import logo from "./shoe.png";
+import adOne from "./adOne.png";
+import adTwo from "./adTwo.png";
+import adThree from "./adThree.png";
 
 
 
@@ -22,7 +25,11 @@ function App() {
       </header>
       <div className="flex-table">
         <div className="left-panel">
-          left panel
+          <div className="products">
+          <img className='product' src={adOne} width="220" height="220" alt="x"></img>
+          <img className='product' src={adTwo} width="220" height="220" alt="x"></img>
+          <img className='product' src={adThree} width="220" height="220" alt="x"></img>
+          </div>
         </div>
         <div className="main-panel">
           <darkTC></darkTC>
