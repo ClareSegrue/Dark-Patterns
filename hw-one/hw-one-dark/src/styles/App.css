@@ -1,7 +1,7 @@
 .App {
   justify-content: left;
   text-align: left;
-  background: black;
+  background: white;
   height: 100vh;
 }
 
@@ -30,6 +30,7 @@
 
 .button-container{
   width: 50%;
+  align-content: top;
 }
 
 .header-title{
@@ -156,7 +157,7 @@ button{
   min-width: 275px;
   width:100%;
   padding: 20px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   color: black;
   border-radius: 10px;
 }
