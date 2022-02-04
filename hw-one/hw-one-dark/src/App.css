@@ -20,13 +20,11 @@
   display: flex;
   flex-direction: row;
   height: 50px;
-
   background: linear-gradient(90deg, rgb(29, 77, 201) -0.83%, rgb(112, 237, 157) 100%);
   color: white;
   font-size: calc(10px + 2vmin);
   padding-left: 20px;
   padding-right: 20px;
- 
 }
 
 
@@ -39,35 +37,50 @@
   display: flex;
   flex-direction: row;
   justify-content: right;
+  align-items: center;
+  padding: 10px;
+  font-family: Garamond, serif;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  letter-spacing: 4px;
 }
+
+
 
 button{
   background-color: transparent;
   color: rgba(139, 234, 255, 0.9);
-  padding: 6px ;
+  padding: 5px ;
   font-size: 14px;
   min-width: 64px;
   box-sizing: border-box;
-  font-family: Manrope, sans-serif;
-  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
   line-height: 1.75;
-  border-radius: 15px;
-  border-width: 0px;
   justify-content: center;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  border-width: 0px;
+  border-style: solid;
+  margin: 7px;
+  border-color: rgb(139, 234, 255);
+  background-color: rgba(13, 13, 26, 0.2);
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-button:hover:first-of-type{
+.dark-button:hover{
   transition: 1.5s;
   box-shadow: 0px 0px 10px 3px  rgb(13,13,26);
   border-radius: 10px;
-  border-width: 2px;
+  border-width: 0px;
   border-color: rgb(13,13,26);
   border-style: solid;
   color: rgb(13,13,26);
-  background-color: rgba(13, 13, 26, 0.5);
+  background-color: rgba(13, 13, 26, 0.3);
 }
 
-button:hover:last-of-type{
+.light-button:hover{
   transition: 1.5s;
   box-shadow: 0px 0px 10px 3px  #61dafb;
   border-radius: 10px;
@@ -75,7 +88,7 @@ button:hover:last-of-type{
   border-color: white;
   border-style: solid;
   color:white;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .flex-table{
