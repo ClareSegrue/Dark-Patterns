@@ -1,0 +1,18 @@
+.dropdown-container{
+    background: '#6db65b';
+    border: '2px solid #008f68';
+    margin-top: 10;
+    padding: '10px 20px';
+}
+
+@media only screen and (max-height: 500px) {
+    .dropdown-container {
+        overflow-y:scroll;
+        max-height:250px;
+    }
+  }
+
+.dropdown{
+    background-color: white;
+    color: rgb(206, 206, 206);
+}

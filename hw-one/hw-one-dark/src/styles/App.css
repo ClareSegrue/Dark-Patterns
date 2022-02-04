@@ -46,6 +46,10 @@
   letter-spacing: 4px;
 }
 
+.terms{
+  font-size: xx-small;
+}
+
 
 
 button{
@@ -85,7 +89,7 @@ button{
   transition: 1.5s;
   box-shadow: 0px 0px 10px 3px  #61dafb;
   border-radius: 10px;
-  border-width: 2px;
+  border-width: 0px;
   border-color: white;
   border-style: solid;
   color:white;
@@ -157,7 +161,7 @@ button{
   min-width: 275px;
   width:100%;
   padding: 20px;
-  background-color: rgb(0, 0, 0);
+  background-color: red;
   color: black;
   border-radius: 10px;
 }
