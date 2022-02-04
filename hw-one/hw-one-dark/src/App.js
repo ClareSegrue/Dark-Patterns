@@ -1,13 +1,13 @@
 
-import './App.css';
+import './styles/App.css';
 import React from "react";
-import logo from "../Images/shoe.png";
-import adOne from "../Images/adOne.png";
-import adTwo from "../Images/adTwo.png";
-import adThree from "../Images/adThree.png";
-import adFour from "../Images/adFour.png";
-import adFive from "../Images/adFive.png";
-import adSix from "../Images/adSix.png";
+import logo from "./Images/shoe.png";
+import adOne from "./Images/adOne.png";
+import adTwo from "./Images/adTwo.png";
+import adThree from "./Images/adThree.png";
+import adFour from "./Images/adFour.png";
+import adFive from "./Images/adFive.png";
+import adSix from "./Images/adSix.png";
 
 
 
