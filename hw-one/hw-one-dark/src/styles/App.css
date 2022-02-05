@@ -52,7 +52,7 @@
 
 .terms-DARK{
   border-width: 1px;
-  border-color: darkblue;
+  border-color: rgb(136, 136, 136);
   border-style: solid;
   font-size: small;
   background: '#6db65b';
@@ -65,6 +65,7 @@
   margin: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  border-radius: 5px;
 }
 
 
