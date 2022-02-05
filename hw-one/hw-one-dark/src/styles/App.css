@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: row;
   height: 50px;
-  background: linear-gradient(90deg, rgb(29, 77, 201) -0.83%, rgb(112, 237, 157) 100%);
+  background: linear-gradient(90deg, rgb(29, 77, 201) -0.83%, rgb(9, 0, 56) 100%);
   color: white;
   font-size: calc(10px + 2vmin);
   padding-left: 20px;
@@ -42,7 +42,7 @@
   padding: 10px;
   font-family: Garamond, serif;
   font-weight: 700;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   letter-spacing: 4px;
 }
 
@@ -50,11 +50,28 @@
   font-size: xx-small;
 }
 
+.terms-DARK{
+  border-width: 1px;
+  border-color: darkblue;
+  border-style: solid;
+  font-size: small;
+  background: '#6db65b';
+  border: '2px solid #008f68';
+  margin-top: 10;
+  padding: '10px 20px';
+  overflow-y:auto;
+  overflow-x: hidden;
+  max-height: 250px;
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 
 
 button{
   background-color: transparent;
-  color: rgba(139, 234, 255, 0.9);
+  color: rgba(9, 0, 56, 0.9);
   padding: 5px ;
   font-size: 14px;
   min-width: 64px;
@@ -68,7 +85,7 @@ button{
   border-width: 0px;
   border-style: solid;
   margin: 7px;
-  border-color: rgb(139, 234, 255);
+  border-color: rgb(9, 0, 56);
   background-color: rgba(13, 13, 26, 0.2);
   padding-left: 15px;
   padding-right: 15px;
@@ -83,6 +100,22 @@ button{
   border-style: solid;
   color: rgb(13,13,26);
   background-color: rgba(13, 13, 26, 0.3);
+}
+
+.accept-button{
+  border-radius: 5px;
+  margin: 0px;
+}
+.accept-button:hover{
+  transition: 1.5s;
+  box-shadow: 0px 0px 10px 3px  rgb(13,13,26);
+  border-radius: 10px;
+  border-width: 0px;
+  border-color: rgb(13,13,26);
+  border-style: solid;
+  color: rgb(13,13,26);
+  background-color: rgba(13, 13, 26, 0.3);
+  
 }
 
 .light-button:hover{
@@ -108,14 +141,16 @@ button{
 }
 
 .right-panel{
-  min-width: 250px;
+  display: flex;
+  flex-direction: column;
   background: rgb(29, 77, 201);
   color: black;
   padding: 20px;
   margin:20px;
   margin-top: 0px;
   margin-bottom: 0px;
-  border-radius: 10px;
+  border-radius: 5px;
+  max-height: 240px;
 
 }
 
@@ -128,7 +163,7 @@ button{
   margin:20px;
   margin-top: 0px;
   margin-bottom: 0px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .products{
@@ -161,9 +196,11 @@ button{
   min-width: 275px;
   width:100%;
   padding: 20px;
-  background-color: red;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
   color: black;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .App-link {
@@ -177,4 +214,10 @@ button{
   to {
     transform: rotate(360deg);
   }
+}
+
+.dropdown{
+  border-width: 0px;
+  border-color: rgb(206,206,206);
+  border-style: solid;
 }
