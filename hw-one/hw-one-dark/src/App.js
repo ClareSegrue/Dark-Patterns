@@ -1,11 +1,11 @@
 import './styles/App.css';
-import logo from "./images/shoe.png";
-import adOne from "./images/adOne.png";
-import adTwo from "./images/adTwo.png";
-import adThree from "./images/adThree.png";
-import adFour from "./images/adFour.png";
-import adFive from "./images/adFive.png";
-import adSix from "./images/adSix.png";
+import logo from "./Images/shoe.png";
+import adOne from "./Images/adOne.png";
+import adTwo from "./Images/adTwo.png";
+import adThree from "./Images/adThree.png";
+import adFour from "./Images/adFour.png";
+import adFive from "./Images/adFive.png";
+import adSix from "./Images/adSix.png";
 import Accordion from './components/Accordion';
 import React, { Component } from 'react';
 
