@@ -4,7 +4,7 @@
     margin-top: 10;
     padding: '10px 20px';
     overflow-y:scroll;
-    max-height: 75px;
+    
 }
 
 
@@ -12,13 +12,12 @@
 @media only screen and (max-height: 500px) {
     .dropdown-container {
         overflow-y:scroll;
-        max-height:75px;
+        
     }
   }
 
 .dropdown{
     background-color: white;
-    color: rgb(206, 206, 206);
-    border-width: 1px;
-    border-right: solid;
+
+    border: 1px solid rgb(29, 77, 201);
 }

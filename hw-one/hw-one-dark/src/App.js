@@ -4,10 +4,13 @@ import adOne from "./Images/adOne.png";
 import adTwo from "./Images/adTwo.png";
 import adThree from "./Images/adThree.png";
 import adFour from "./Images/adFour.png";
-import adFive from "./Images/adFive.png";
-import adSix from "./Images/adSix.png";
 import Accordion from './components/Accordion';
 import React, { Component } from 'react';
+import PaymentAndShipping from './components/Shipping';
+import termsOfPurchase from './components/termsOfPurchase.txt';
+import Shipping from './components/Shipping';
+import Payment from './components/Payment';
+
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +18,8 @@ class App extends Component {
     this.state = (<div><h1>WELCOME.</h1>Select light mode or dark mode from the header.</div>)
   }
 
-  updateLight = () => {
+
+  updateLightOne = () => {
     this.setState(
       <div>
         <div>To continue, please read the <em>Privacy Policy</em> and <em>Terms and Conditions.</em> <br></br>Then, choose to <b>accept</b> or <b>deny</b>.</div>
@@ -25,7 +29,7 @@ class App extends Component {
             <b><h3><em>Privacy Policy for Cobs Cobblers</em></h3>
               English
               Privacy Policy <br></br></b>
-              <br></br>
+            <br></br>
             <em>Last updated: January 13, 2022</em><br></br><br></br>
             This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
             information when You use the Service and tells You about Your privacy rights and how the law protects
@@ -313,7 +317,7 @@ class App extends Component {
       </div>);
   }
 
-  updateDark = () => {
+  updateDarkOne = () => {
     this.setState(
       <div>
         <div>To continue, please accept the Privacy Policy and Terms and Conditions.</div>
@@ -551,13 +555,84 @@ class App extends Component {
     );
   }
 
+  updateDarkTwo = () => {
+    this.setState(
+      <div>
+        <Accordion>
+          <div className="accordion-header" label="Payment">
+            <Payment></Payment>
+          </div>
+          <div className="accordion-header" label="Shipping">
+            <Shipping></Shipping>
+          </div>
+        </Accordion>
+        
+
+        <form id="user-accept-form" className="temp">
+          <div className='user-accept-form'>
+            <label for="payment-accept"> I agree to be billed $352.79 and solemnly swear to adhere to law of no backsises!</label>
+            <input type="checkbox" id="payment-accept" name="payment-accept" value="I agree." className='form-flex'></input>
+
+          </div>
+          <div className='user-accept-form'>
+            <label for="terms-accept"> I accept the <a href={termsOfPurchase} download>terms and conditions of purchase.</a></label>
+            <input type="checkbox" id="terms-accept" name="terms-accept" value="I agree." className='form-flex'></input>
+          </div>
+          <input type="submit"></input>
+        </form>
+      </div>
+
+
+    );
+  }
+
+  updateLightTwo = () => {
+    this.setState(
+      <div>
+        <Payment></Payment>
+
+        <div id="receipt">
+          <b>Itemized Total</b>
+          <ul>
+            <li>$25.69<em> --- (1) Nike Sneakers</em></li>
+            <li>$46.69<em> --- (1) Palladium HiTops</em></li>
+            <li>$10.00<em> --- Flat Rate Shipping (US)</em></li>
+            <li>$10.69<em> --- Taxes</em></li>
+          </ul>
+          ----------------------------------------- <br></br>
+          <b>Final Total: $93.07</b>
+        </div>
+
+        <form id="user-accept-form" className="temp">
+          <div className='user-accept-form'>
+            <label for="payment-accept"> I agree to be billed <b>$93.07</b> and solemnly swear to adhere to law of no backsises!</label>
+            <input type="checkbox" id="payment-accept" name="payment-accept" value="I agree." className='form-flex'></input>
+
+          </div>
+          <div className='user-accept-form'>
+            <label for="terms-accept"> I accept the <a href={termsOfPurchase} download>terms and conditions of purchase.</a></label>
+            <input type="checkbox" id="terms-accept" name="terms-accept" value="I agree." className='form-flex'></input>
+          </div>
+          <input type="submit"></input>
+        </form>
+
+
+
+      </div>
+    );
+  }
+
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <div className="button-container">
-            <button className="dark-button" onClick={this.updateDark}>DARK</button>
-            <button className="light-button" onClick={this.updateLight}>LIGHT</button>
+            <button className="dark-button" onClick={this.updateDarkTwo}>DARK</button>
+            <button className="light-button" onClick={this.updateLightTwo}>LIGHT</button>
+          </div>
+          <div>
+
           </div>
           <div className="header-title">cob's cobblers
             <img src={logo} width="32" height="32" alt="x"></img>
@@ -573,7 +648,6 @@ class App extends Component {
           </div>
           <div className="main-panel">
             <div>{this.state}</div>
-
           </div>
           <div className="right-panel">
             <div className="products">

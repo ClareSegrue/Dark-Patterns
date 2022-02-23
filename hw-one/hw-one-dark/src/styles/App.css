@@ -179,6 +179,12 @@ button{
   padding: 5px;
 }
 
+#receipt{
+  background-color: #61dafb;
+  margin: 10px;
+  padding: 5px;
+
+}
 
 
 @media only screen and (max-width: 700px) {
@@ -197,7 +203,7 @@ button{
   min-width: 275px;
   width:100%;
   padding: 20px;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   border-color: black;
   color: black;
