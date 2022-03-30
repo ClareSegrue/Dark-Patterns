@@ -641,39 +641,60 @@ class App extends Component {
       </div>
     );
   }
+  updateLightThree = () => {
+    this.setState(
+      <div>
+      LIGHT
+      </div>
+    );
+  }
 
+  updateDarkThree = () => {
+    this.setState(
+      <div>
+      DARK
+      </div>
+    );
+  }
+  /*
+          <div className="right-panel">
+            <div className="products">
+              <img className='product' src={adFour} width="220" height="220" alt="x"></img>
+            </div>
+          </div>
+
+  */
+
+  /*
+          <div className="left-panel">
+            <div className="products">
+
+            </div>
+          </div>
+
+  */
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <div className="button-container">
-            <button className="dark-button" onClick={this.updateDarkTwo}>DARK</button>
-            <button className="light-button" onClick={this.updateLightTwo}>LIGHT</button>
+            <button className="dark-button" onClick={this.updateDarkThree}>DARK</button>
+            <button className="light-button" onClick={this.updateLightThree}>LIGHT</button>
           </div>
           <div>
 
           </div>
-          <div className="header-title">cob's cobblers
+          <div className="header-title">cob's soulo game
             <img src={logo} width="32" height="32" alt="x"></img>
           </div>
         </header>
         <div className="flex-table">
-          <div className="left-panel">
-            <div className="products">
-              <img className='product' src={adOne} width="220" height="220" alt="x"></img>
-              <img className='product' src={adTwo} width="220" height="220" alt="x"></img>
-              <img className='product' src={adThree} width="220" height="220" alt="x"></img>
-            </div>
-          </div>
+
           <div className="main-panel">
             <div>{this.state}</div>
           </div>
-          <div className="right-panel">
-            <div className="products">
-              <img className='product' src={adFour} width="220" height="220" alt="x"></img>
-            </div>
-          </div>
+
         </div>
       </div>
     );
