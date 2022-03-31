@@ -3,6 +3,7 @@
   text-align: left;
   background: rgb(32, 32, 32);
   height: 100vh;
+  min-width: 620px;
 }
 
 .App-logo {
@@ -92,9 +93,7 @@
   padding-right: 15px;
 }
 
-button{
 
-}
 
 .dark-button:hover{
   transition: 1.5s;
@@ -269,7 +268,7 @@ h1{
 #gif-container{
   background-image:url('../Images/background-stars.gif');
   background-repeat:repeat;
-  padding-left: 20px; 
+ 
   
 }
 

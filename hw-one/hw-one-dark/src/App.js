@@ -1,5 +1,5 @@
 import './styles/App.css';
-import logo from "./Images/game.png";
+import logo from "./Images/star.png";
 import bgMusic from "./audio/game.wav";
 import soundOn from "./Images/soundOn.png";
 import soundOff from "./Images/soundOff.png";
@@ -13,6 +13,8 @@ import PaymentAndShipping from './components/Shipping';
 import termsOfPurchase from './components/termsOfPurchase.txt';
 import Shipping from './components/Shipping';
 import Payment from './components/Payment';
+import TopBanner from './components/TopBanner';
+import game from "./Images/spaceGame.gif";
 
 
 class App extends Component {
@@ -22,7 +24,7 @@ class App extends Component {
     this.audioImage = this.audioImages[0];
 
     this.audio = new Audio(bgMusic);
-    this.isPlaying = false;
+    this.isPlaying = new Boolean(false);
     this.state = (<div id="black"><h1>WELCOME.</h1>Select light mode or dark mode from the header.</div>);
     this.mode = false;
     this.handleChange = this.handleChange.bind(this);
@@ -30,25 +32,29 @@ class App extends Component {
   }
 
   audioStarter() {
-    if (!this.isPlaying) {
-      this.audio.volume = 0.01;
+    if (this.isPlaying === false) {
+      this.audio.volume = 0.000;
+      this.audio.loop = true;
       this.audio.play();
       this.isPlaying = true;
-      //audio.loop();
+    } else {
+      this.isPlaying = false;
     }
   }
-
-  audioStateManager(){
-    if(this.isPlaying){
-      this.audio.volume = 0;
+/*
+  audioStateManager() {
+    if (this.isPlaying === true) {
+      this.audio.pause = true;
+      this.audio.currentTime = 0;
+      this.isPlaying = false;
     } else {
       this.audio.volume = .1;
     }
-    this.changeAudioImg();
+    //this.changeAudioImg();
   }
-
-  changeAudioImg(){
-    if(document.getElementById("volume").src == soundOn){
+*/
+  changeAudioImg() {
+    if (document.getElementById("volume").src === soundOn) {
       document.getElementById("volume").src = soundOff;
     } else {
       document.getElementById("volume").src = soundOn;
@@ -61,7 +67,7 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    if (this.mode == false) {
+    if (this.mode === false) {
       var state = "dark";
       this.setState(this.updateDarkThree);
     } else {
@@ -102,7 +108,8 @@ class App extends Component {
           LIGHT
         </div>
         <div id='bottom-span'>
-          <button background={this.audioImage} id="volume"></button>
+          <audio src={bgMusic} id="radio" class="hidden" preload="none"></audio>
+          <button background={this.audioImage} id="volume" onClick={this.audioStateManager}>Sound</button>
         </div>
       </div>
 
@@ -114,6 +121,8 @@ class App extends Component {
     this.setState(
       <div>
         DARK
+        <TopBanner/>
+        <img src={game}></img>
       </div>
     );
   }
@@ -128,45 +137,36 @@ class App extends Component {
     this.mode = true;
     this.setState(this.addLoginComponent);
   }
-  /*
-          <div className="right-panel">
-            <div className="products">
-              <img className='product' src={adFour} width="220" height="220" alt="x"></img>
-            </div>
-          </div>
-
-          */
 
   /*
-          <div className="left-panel">
-            <div className="products">
+  <div className="right-panel">
+  <div className="products">
+  <img className='product' src={adFour} width="220" height="220" alt="x"></img>
+  </div>
+  </div>
 
-            </div>
-          </div>
-
-          */
-
-
+  <div className="left-panel">
+  <div className="products">
+  </div>
+  </div>
+  */
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <div className="button-container">
-            <button className="dark-button" id = "default-button"onClick={this.enterDark}>DARK</button>
-            <button className="light-button" id = "default-button"onClick={this.enterLight}>LIGHT</button>
+            <button className="dark-button" id="default-button" onClick={this.enterDark}>DARK</button>
+            <button className="light-button" id="default-button" onClick={this.enterLight}>LIGHT</button>
           </div>
-
           <div className="header-title">cob's soulo game
             <img src={logo} width="32" height="32" alt="x"></img>
           </div>
         </header>
         <div className="flex-table">
-
           <div className="main-panel" id='gif-container'>
             <div>{this.state}</div>
           </div>
-
         </div>
       </div>
     );
