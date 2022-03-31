@@ -1,6 +1,8 @@
 import './styles/App.css';
 import logo from "./Images/game.png";
-import bgMusic from "./audio/game.wav"
+import bgMusic from "./audio/game.wav";
+import soundOn from "./Images/soundOn.png";
+import soundOff from "./Images/soundOff.png";
 import adOne from "./Images/adOne.png";
 import adTwo from "./Images/adTwo.png";
 import adThree from "./Images/adThree.png";
@@ -16,6 +18,10 @@ import Payment from './components/Payment';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.audioImages = [soundOn, soundOff];
+    this.audioImage = this.audioImages[0];
+
+    this.audio = new Audio(bgMusic);
     this.isPlaying = false;
     this.state = (<div id="black"><h1>WELCOME.</h1>Select light mode or dark mode from the header.</div>);
     this.mode = false;
@@ -23,13 +29,29 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  audioStarter(){
-    if(!this.isPlaying){
-      var audio = new Audio(bgMusic);
-      audio.volume = 0.01;
-      audio.play();
+  audioStarter() {
+    if (!this.isPlaying) {
+      this.audio.volume = 0.01;
+      this.audio.play();
       this.isPlaying = true;
       //audio.loop();
+    }
+  }
+
+  audioStateManager(){
+    if(this.isPlaying){
+      this.audio.volume = 0;
+    } else {
+      this.audio.volume = .1;
+    }
+    this.changeAudioImg();
+  }
+
+  changeAudioImg(){
+    if(document.getElementById("volume").src == soundOn){
+      document.getElementById("volume").src = soundOff;
+    } else {
+      document.getElementById("volume").src = soundOn;
     }
   }
 
@@ -47,7 +69,7 @@ class App extends Component {
       this.setState(this.updateLightThree);
     }
     //alert('User entered: ' + state);
-    
+
     event.preventDefault();
   }
 
@@ -66,17 +88,24 @@ class App extends Component {
           <label for="psw"><b>password:</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required></input>
 
-          <button type="submit" class="accept-button">login</button>
+          <button type="submit" class="accept-button" id="default-button">login</button>
         </form>
       </div>
     );
   }
- 
+
   updateLightThree = () => {
+    this.audioStarter();
     this.setState(
       <div>
-        LIGHT
+        <div>
+          LIGHT
+        </div>
+        <div id='bottom-span'>
+          <button background={this.audioImage} id="volume"></button>
+        </div>
       </div>
+
     );
   }
 
@@ -90,13 +119,13 @@ class App extends Component {
   }
 
   enterDark = () => {
-    this.mode=false;
+    this.mode = false;
     this.setState(this.addLoginComponent);
 
   }
 
   enterLight = () => {
-    this.mode=true;
+    this.mode = true;
     this.setState(this.addLoginComponent);
   }
   /*
@@ -117,17 +146,17 @@ class App extends Component {
 
           */
 
-          
+
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <div className="button-container">
-            <button className="dark-button" onClick={this.enterDark}>DARK</button>
-            <button className="light-button" onClick={this.enterLight}>LIGHT</button>
+            <button className="dark-button" id = "default-button"onClick={this.enterDark}>DARK</button>
+            <button className="light-button" id = "default-button"onClick={this.enterLight}>LIGHT</button>
           </div>
-  
+
           <div className="header-title">cob's soulo game
             <img src={logo} width="32" height="32" alt="x"></img>
           </div>

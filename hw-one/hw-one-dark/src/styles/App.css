@@ -71,10 +71,8 @@
   border-radius: 5px;
 }
 
-
-
-button{
-  color: rgba(9, 0, 56, 0.9);
+#default-button{
+  color: rgba(230, 230, 230, 0.9);
   padding: 5px ;
   font-size: 14px;
   min-width: 64px;
@@ -92,6 +90,10 @@ button{
   background-color: rgba(13, 13, 26, 0.2);
   padding-left: 15px;
   padding-right: 15px;
+}
+
+button{
+
 }
 
 .dark-button:hover{
@@ -121,6 +123,10 @@ button{
   color: rgb(121, 137, 204);
   background-color: rgba(13, 13, 26, 0.3);
   
+}
+
+#volume{
+ 
 }
 
 .light-button:hover{
