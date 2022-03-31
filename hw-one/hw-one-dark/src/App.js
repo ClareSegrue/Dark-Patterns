@@ -41,18 +41,18 @@ class App extends Component {
       this.isPlaying = false;
     }
   }
-/*
-  audioStateManager() {
-    if (this.isPlaying === true) {
-      this.audio.pause = true;
-      this.audio.currentTime = 0;
-      this.isPlaying = false;
-    } else {
-      this.audio.volume = .1;
+  /*
+    audioStateManager() {
+      if (this.isPlaying === true) {
+        this.audio.pause = true;
+        this.audio.currentTime = 0;
+        this.isPlaying = false;
+      } else {
+        this.audio.volume = .1;
+      }
+      //this.changeAudioImg();
     }
-    //this.changeAudioImg();
-  }
-*/
+  */
   changeAudioImg() {
     if (document.getElementById("volume").src === soundOn) {
       document.getElementById("volume").src = soundOff;
@@ -108,7 +108,6 @@ class App extends Component {
           LIGHT
         </div>
         <div id='bottom-span'>
-          <audio src={bgMusic} id="radio" class="hidden" preload="none"></audio>
           <button background={this.audioImage} id="volume" onClick={this.audioStateManager}>Sound</button>
         </div>
       </div>
@@ -119,11 +118,19 @@ class App extends Component {
   updateDarkThree = () => {
     this.audioStarter();
     this.setState(
-      <div>
-        DARK
-        <TopBanner/>
-        <img src={game}></img>
+      <div className="flex-table">
+        <div className="main-panel">
+          <div className="game">
+            <TopBanner />
+            <img src={game} width="600"></img>
+          </div>
+        </div>
+        <div className="left-panel">
+          
+        </div>
       </div>
+
+
     );
   }
 
@@ -145,10 +152,7 @@ class App extends Component {
   </div>
   </div>
 
-  <div className="left-panel">
-  <div className="products">
-  </div>
-  </div>
+
   */
 
   render() {

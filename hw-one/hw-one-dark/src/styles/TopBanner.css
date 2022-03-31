@@ -1,10 +1,44 @@
-#row-layout{
+#row-layout-right{
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-   
+    width: 50%;
+    background: white;
+    border-style: solid;
+    border-width: 3px;
+    justify-content: flex-end;
+
 }
+
+#row-layout-left{
+    display: flex;
+    width: 50%;
+    background: white;
+    border-style: solid;
+    border-width: 3px;
+
+}
+
+.parent{
+    display: flex;
+    background: white;
+    border-style: solid;
+    border-width: 3px;
+    border-left-color:  rgb(8,8,24);
+    border-bottom-color:  rgb(211, 36, 109);
+    border-right-color:  rgb(211, 36, 109);
+    border-top-color:  rgb(8,8,24);
+}
+
 button{
-   
-   
+    padding: 5px;
+    border: none;
+    background-color: rgb(8,8,24);
+    color: rgb(211, 36, 109);
+    margin: 5px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+button:hover{
+    color: white;
+    transition: .5s;
 }
