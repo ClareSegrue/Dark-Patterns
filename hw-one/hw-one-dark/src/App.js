@@ -163,14 +163,14 @@ class App extends Component {
             <button className="dark-button" id="default-button" onClick={this.enterDark}>DARK</button>
             <button className="light-button" id="default-button" onClick={this.enterLight}>LIGHT</button>
           </div>
-          <div className="header-title">cob's soulo game
+          <div className="header-title">cob's soulo game.exe
             <img src={logo} width="32" height="32" alt="x"></img>
           </div>
         </header>
-        <div className="flex-table">
-          <div className="main-panel" id='gif-container'>
+        <div className="flex-table"id='gif-container'>
+          
             <div>{this.state}</div>
-          </div>
+         
         </div>
       </div>
     );
