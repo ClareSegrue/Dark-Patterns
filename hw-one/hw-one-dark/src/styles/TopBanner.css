@@ -38,6 +38,21 @@ button{
     font-weight: 700;
 }
 
+Link{
+    padding: 5px;
+    border: none;
+    background-color: rgb(8,8,24);
+    color: rgb(211, 36, 109);
+    margin: 5px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+Link:hover{
+    color: white;
+    transition: .5s;
+}
+
 button:hover{
     color: white;
     transition: .5s;

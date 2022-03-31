@@ -1,23 +1,32 @@
 .dropdown-container{
-    background: '#6db65b';
-    border: '2px solid #008f68';
-    margin-top: 10;
-    padding: '10px 20px';
-    overflow-y:scroll;
-    
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    background-color: rgba(240, 240, 240, 0.1);
 }
 
 
 
 @media only screen and (max-height: 500px) {
     .dropdown-container {
-        overflow-y:scroll;
+        
         
     }
   }
 
 .dropdown{
-    background-color: white;
+    background-color: rgb(0,0,0, .4);
+    overflow-y: none;
+}
 
-    border: 1px solid rgb(29, 77, 201);
+.pad{
+    padding: 5px;
+}
+
+.accordion-section{
+    padding-top: 10px;
+}
+
+.accordion{
+    padding-top: 20px;
 }

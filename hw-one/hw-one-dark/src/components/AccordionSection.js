@@ -20,14 +20,16 @@ class AccordionSection extends React.Component {
       props: { isOpen, label },
     } = this;
 
-    return (
-      <div className="dropdown"
+    /*
         style={{
           background: isOpen ? 'rgb(255,255,255)' : 'rgb(255,255,255)',
           padding: '5px 10px',
         }}
-      >
-        <div onClick={onClick} style={{ cursor: 'pointer' }}>
+
+    */
+    return (
+      <div className="dropdown">
+        <div className="pad" onClick={onClick} style={{ cursor: 'pointer' }}>
           {label}
           <div style={{ float: 'right' }}>
             {!isOpen && <span>&#9650;</span>}
