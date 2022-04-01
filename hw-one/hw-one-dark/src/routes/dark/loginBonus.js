@@ -6,20 +6,26 @@ import React, { Component } from "react";
 class LoginBonus extends Component {
   constructor(props) {
     super(props);
+
     this.date = new Date();
     this.time = this.date.toLocaleTimeString();
-    
+
+    this.midnight = new Date();
+    this.midnight = this.midnight.setHours(24, 0, 0, 0);
+
+    this.acceptableTime = false;
+
     this.state = (
       <div className="submit-button">
         <Link to="/darkThree">
-          <button type="submit" class="accept-button" id="default-button">
+          <button type="submit" class="accept-button" id="default-button" onClick={alert("thanks for logging! you are on a six day login streak!")}>
             submit
           </button>
         </Link>
       </div>
     );
   }
-  updateButton = () => {
+  errorButton = () => {
     this.setState(
       <div className="error-button">
         <button type="reset" id="default-button">
@@ -29,8 +35,33 @@ class LoginBonus extends Component {
     );
   };
 
-  checkTime(){
-    
+  submitButton = () => {
+    this.setState(
+      <div className="error-button">
+        <Link to="/darkThree">
+          <button type="submit" class="accept-button" id="default-button">
+            submit
+          </button>
+        </Link>
+      </div>
+    );
+  };
+
+  checkTime() {
+    if (this.time.endsWith("PM")) {
+      var hr = this.time.split(":");
+      if (hr[0] == "11") {
+        this.acceptableTime = true;
+      } else {
+        this.acceptableTime = false;
+      }
+    } else {
+      if (hr[0] == "12") {
+        this.acceptableTime = true;
+      } else {
+        this.acceptableTime = false;
+      }
+    }
   }
   // );
 
@@ -96,6 +127,7 @@ class LoginBonus extends Component {
               </div>
               <div className="time">
                 {this.time}
+                
               </div>
             </form>
           </div>

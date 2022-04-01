@@ -6,8 +6,9 @@ import gold from "../Images/gold.png";
 import silver from "../Images/silver.png";
 import bronze from "../Images/bronze.png";
 
+
 export default function DarkThree() {
-  alert("thanks for logging! you are on a six day login streak!");
+  var progressCounter = 6;
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +29,22 @@ export default function DarkThree() {
           <div className="flex-table">
             <div className="main-panel">
               <div className="game">
-                <TopBanner />
+              <div className="parent">
+        <div id="row-layout-left">
+          <Link to="/loginBonus">
+            <button className="login" onClick={progressCounter = progressCounter + 1}>login bonus</button>
+          </Link>
+          <Link to="/store">
+            <button className="store">store</button>
+          </Link>
+          <Link to="/recharge">
+            <button className="recharge">recharge</button>
+          </Link>
+        </div>
+        <div id="row-layout-right">
+          <button className="x">X</button>
+        </div>
+      </div>
                 <iframe
                   width="800"
                   height="500"
@@ -37,9 +53,9 @@ export default function DarkThree() {
                 ></iframe>
                 <br></br>
                 <label for="file"><b>daily login bonus:</b></label>
-                <progress id="file" value="60" max="100">
+                <progress id="file" value={progressCounter} max="7">
                   {" "}
-                  60%{" "}
+                  {" "}
                 </progress>
               </div>
             </div>
