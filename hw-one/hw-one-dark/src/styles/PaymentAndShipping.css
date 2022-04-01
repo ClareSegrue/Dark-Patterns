@@ -21,7 +21,7 @@ form{
   }
   
   #payment-form{
-    background-color: rgb(9, 0, 56);
+    background-color: rgb(9, 0, 56, .4);
     color: white;
   }
   

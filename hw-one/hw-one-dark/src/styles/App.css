@@ -22,6 +22,11 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+#store{
+  display: flex;
+
+}
+
 .App-header {
   display: flex;
   flex-direction: row;

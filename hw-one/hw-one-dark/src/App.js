@@ -13,6 +13,10 @@ class App extends Component {
     super(props);
     this.audioImages = [soundOn, soundOff];
     this.audioImage = this.audioImages[0];
+    
+    this.goldCount = 40;
+    this.silverCount = 30;
+    this.bronzeCount =76;
 
     this.audio = new Audio(bgMusic);
     this.isPlaying = new Boolean(false);
@@ -24,6 +28,8 @@ class App extends Component {
     this.mode = false;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+      
+  
   }
 
   audioStarter() {

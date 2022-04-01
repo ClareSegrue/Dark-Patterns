@@ -18,7 +18,14 @@ class LoginBonus extends Component {
     this.state = (
       <div className="submit-button">
         <Link to="/darkThree">
-          <button type="submit" class="accept-button" id="default-button" onClick={alert("thanks for logging! you are on a six day login streak!")}>
+          <button
+            type="submit"
+            class="accept-button"
+            id="default-button"
+            onClick={alert(
+              "thanks for logging! you are on a six day login streak!"
+            )}
+          >
             submit
           </button>
         </Link>
@@ -125,10 +132,7 @@ class LoginBonus extends Component {
                 *my checkmark here is equivalent to reciting this incantation
                 out loud
               </div>
-              <div className="time">
-                {this.time}
-                
-              </div>
+              <div className="time">{this.time}</div>
             </form>
           </div>
         </div>

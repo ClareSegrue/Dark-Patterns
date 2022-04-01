@@ -24,6 +24,9 @@ class Payment extends React.Component {
             <input type="number" id="cvv-input" maxLength="3"></input>
             <label for="cvv-input">CVV:</label>
           </div>
+          <button type="submit" class="accept-button" id="default-button">
+              save payment for future
+          </button>
         </form>
       </div>
 
