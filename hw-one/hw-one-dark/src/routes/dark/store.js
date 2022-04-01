@@ -6,7 +6,7 @@ import silver from "../../Images/silver.png";
 import bronze from "../../Images/bronze.png";
 import Payment from "../../components/Payment.js";
 
-export default function Terms() {
+export default function Store() {
   return (
     <div className="App">
       <header className="App-header">
@@ -48,7 +48,7 @@ export default function Terms() {
             </div>
           </div>
           <h2>payment</h2>
-        <Payment></Payment>
+          <Payment></Payment>
         </div>
       </div>
     </div>
