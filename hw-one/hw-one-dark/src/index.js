@@ -7,12 +7,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Privacy from "./routes/privacy";
-import Store from "./routes/dark/store";
 import Terms from "./routes/terms";
 import LightThree from "./routes/lightThree";
 import DarkThree from "./routes/darkThree";
+
 import LoginBonus from "./routes/dark/loginBonus";
 import Recharge from "./routes/dark/recharge";
+import Store from "./routes/dark/store";
+
+import LoginBonusLIGHT from "./routes/light/loginBonusLIGHT";
+import RechargeLIGHT from "./routes/light/rechargeLIGHT";
+import StoreLIGHT from "./routes/light/storeLIGHT";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -28,6 +33,11 @@ ReactDOM.render(
       <Route path="/loginBonus" element={<LoginBonus />} />
       <Route path="/recharge" element={<Recharge />} />
       <Route path="/store" element={<Store />} />
+
+      <Route path="/loginBonusLIGHT" element={<LoginBonusLIGHT />} />
+      <Route path="/rechargeLIGHT" element={<RechargeLIGHT />} />
+      <Route path="/storeLIGHT" element={<StoreLIGHT />} />
+
     </Routes>
   </BrowserRouter>,
   rootElement
