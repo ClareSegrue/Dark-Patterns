@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import TopBanner from "../components/TopBanner";
 
 export default function DarkThree() {
+  alert("thanks for logging! you are on a six day login streak!");
   return (
+    
     <div className="App">
       <header className="App-header">
         <div className="button-container">

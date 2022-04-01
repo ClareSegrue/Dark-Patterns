@@ -17,6 +17,11 @@
   }
 }
 
+#tiny{
+  font-size: xx-small;
+  color: rgba(255, 255, 255, 0.5)
+}
+
 .App-header {
   display: flex;
   flex-direction: row;

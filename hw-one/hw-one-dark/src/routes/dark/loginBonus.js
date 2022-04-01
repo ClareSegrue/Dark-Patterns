@@ -1,8 +1,8 @@
-import "../styles/App.css";
-import logo from "../Images/star.png";
+import "../../styles/App.css";
+import logo from "../../Images/star.png";
 import { Link } from "react-router-dom";
 
-export default function Terms() {
+export default function LoginBonus() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,10 +20,7 @@ export default function Terms() {
       </header>
       <div className="flex-table" id="gif-container">
         <div className="main-panel">
-        <div id="store">
-            <b>Store</b>
-
-          </div>
+        login bonus placeholder
         </div>
       </div>
     </div>

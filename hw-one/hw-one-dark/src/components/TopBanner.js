@@ -8,13 +8,13 @@ class TopBanner extends React.Component {
     return (
       <div className="parent">
         <div id="row-layout-left">
-          <Link to="/store">
+          <Link to="/loginBonus">
             <button className="login">login bonus</button>
           </Link>
           <Link to="/store">
             <button className="store">store</button>
           </Link>
-          <Link to="/store">
+          <Link to="/recharge">
             <button className="recharge">recharge</button>
           </Link>
         </div>

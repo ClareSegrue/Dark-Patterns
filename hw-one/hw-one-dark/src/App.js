@@ -82,6 +82,8 @@ class App extends Component {
           <div class="imgcontainer">
             <img src={logo} alt="Avatar" class="avatar"></img>
           </div>
+          <h4>register // login:</h4>
+          <div id="tiny">by signing up, you agree to the terms and conditions <br></br>found on our company website</div>
           <div className="flex-form">
             <label for="uname">
               <b>username:</b>
@@ -102,11 +104,11 @@ class App extends Component {
               name="psw"
               required
             ></input>
-          
+          <Link to="/darkThree">
             <button type="submit" class="accept-button" id="default-button">
               login
             </button>
-          
+            </Link>
 
           </div>
         </form>
@@ -122,6 +124,8 @@ class App extends Component {
             <div class="imgcontainer">
               <img src={logo} alt="Avatar" class="avatar"></img>
             </div>
+            <h4>register // login:</h4>
+            
             <label for="uname">
               <b>username:</b>
             </label>
@@ -141,7 +145,10 @@ class App extends Component {
               name="psw"
               required
             ></input>
+            <br></br>
+            <div id="regular">please read and accept the following terms.</div>
             <div>
+              
               <Accordion>
                 <div className="accordion-header" label="terms and conditions">
                   <label for="tc">
