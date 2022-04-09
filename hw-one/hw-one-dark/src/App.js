@@ -13,10 +13,10 @@ class App extends Component {
     super(props);
     this.audioImages = [soundOn, soundOff];
     this.audioImage = this.audioImages[0];
-    
+
     this.goldCount = 40;
     this.silverCount = 30;
-    this.bronzeCount =76;
+    this.bronzeCount = 76;
 
     this.audio = new Audio(bgMusic);
     this.isPlaying = new Boolean(false);
@@ -28,8 +28,6 @@ class App extends Component {
     this.mode = false;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-      
-  
   }
 
   audioStarter() {
@@ -89,7 +87,10 @@ class App extends Component {
             <img src={logo} alt="Avatar" class="avatar"></img>
           </div>
           <h4>register // login:</h4>
-          <div id="tiny">by signing up, you agree to the terms and conditions <br></br>found on our company website</div>
+          <div id="tiny">
+            by signing up, you agree to the terms and conditions <br></br>found
+            on our company website
+          </div>
           <div className="flex-form">
             <label for="uname">
               <b>username:</b>
@@ -110,12 +111,11 @@ class App extends Component {
               name="psw"
               required
             ></input>
-          <Link to="/darkThree">
-            <button type="submit" class="accept-button" id="default-button">
-              login
-            </button>
+            <Link to="/darkThree">
+              <button type="submit" class="accept-button" id="default-button">
+                login
+              </button>
             </Link>
-
           </div>
         </form>
       </div>
@@ -131,7 +131,7 @@ class App extends Component {
               <img src={logo} alt="Avatar" class="avatar"></img>
             </div>
             <h4>register // login:</h4>
-            
+
             <label for="uname">
               <b>username:</b>
             </label>
@@ -154,7 +154,6 @@ class App extends Component {
             <br></br>
             <div id="regular">please read and accept the following terms.</div>
             <div>
-              
               <Accordion>
                 <div className="accordion-header" label="terms and conditions">
                   <label for="tc">
@@ -180,9 +179,9 @@ class App extends Component {
               </Accordion>
             </div>
             <Link to="/lightThree">
-            <button type="submit" class="accept-button" id="default-button">
-              login
-            </button>
+              <button type="submit" class="accept-button" id="default-button">
+                login
+              </button>
             </Link>
           </div>
         </form>

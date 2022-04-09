@@ -11,11 +11,12 @@ export default function Store() {
     <div className="App">
       <header className="App-header">
         <div className="button-container">
-          <Link to="/">
+          <Link to={{pathname: "/darkThree"}}>
             <button className="dark-button" id="default-button">
               RETURN HOME
             </button>
           </Link>
+
         </div>
         <div className="header-title">
           cob's soulo game.exe

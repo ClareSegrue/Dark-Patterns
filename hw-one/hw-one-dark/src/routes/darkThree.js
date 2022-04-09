@@ -1,26 +1,35 @@
 import "../styles/App.css";
 import logo from "../Images/star.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import TopBanner from "../components/TopBanner";
 import gold from "../Images/gold.png";
 import silver from "../Images/silver.png";
 import bronze from "../Images/bronze.png";
+import Modal from "../components/AdModal";
 
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 
-class DarkThree extends Component {
+const DarkThree = () => {
+  const [showModal, setShowModal] = useState(false);
 
-  constructor(props) {
-    super(props);
-    this.progressCounter = 6;
-    this.goldCount = 40;
-    this.silverCount = 30;
-    this.bronzeCount =76;
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
-  this.store = "/store?" + this.goldCount + "?" + this.silverCount + "?" + this.bronzeCount;
-}
-render() {
-  return(
+  var progressCounter = 6;
+  
+  const wallet = new Object();
+  wallet.bronze = 30;
+  wallet.silver = 30;
+  wallet.gold = 30;
+  
+ 
+  var store = "/store?" + wallet.gold + "?" + wallet.silver + "?" + wallet.bronze;
+
+  function Profile(){
+    const { handle } = useParams();
+  }
+  return (
     <div className="App">
       <header className="App-header">
         <div className="button-container">
@@ -35,6 +44,7 @@ render() {
           <img src={logo} width="32" height="32" alt="x"></img>
         </div>
       </header>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <div className="flex-table" id="gif-container">
         <div>
           <div className="flex-table">
@@ -45,17 +55,18 @@ render() {
                     <Link to="/loginBonus">
                       <button
                         className="login"
-                        onClick={(this.progressCounter = this.progressCounter + 1)}
+                        onClick={(progressCounter = progressCounter + 1)}
                       >
                         login bonus
                       </button>
                     </Link>
-                    <Link to={this.store}>
+                    <Link to={store}>
                       <button className="store">store</button>
                     </Link>
-                    <Link to="/recharge">
-                      <button className="recharge">recharge</button>
-                    </Link>
+
+                    <button className="recharge" onClick={openModal}>
+                      recharge
+                    </button>
                   </div>
                   <div id="row-layout-right">
                     <button className="x">X</button>
@@ -71,7 +82,7 @@ render() {
                 <label for="file">
                   <b>daily login bonus:</b>
                 </label>
-                <progress id="file" value={this.progressCounter} max="7">
+                <progress id="file" value={progressCounter} max="7">
                   {" "}
                 </progress>
               </div>
@@ -79,20 +90,20 @@ render() {
             <div className="left-panel">
               <h1 className="currency">cobbucks:</h1>
               <div className="currency">
-                <img src={gold} width="100px"></img>x {this.goldCount}
+                <img src={gold} width="100px"></img>x {wallet.gold}
               </div>
               <div className="currency">
-                <img src={silver} width="100px"></img>x {this.silverCount}
+                <img src={silver} width="100px"></img>x {wallet.silver}
               </div>
               <div className="currency">
-                <img src={bronze} width="100px"></img>x {this.bronzeCount}
+                <img src={bronze} width="100px"></img>x {wallet.bronze}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    );
-  }
-}
+  );
+};
+
 export default DarkThree;
