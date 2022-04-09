@@ -15,7 +15,7 @@ export default function LoginModal({ showLoginModal, setShowLoginModal }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    progressCounter = 7;
+    
     console.log("refresh prevented");
   };
 
