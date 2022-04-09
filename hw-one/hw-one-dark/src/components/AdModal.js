@@ -3,6 +3,7 @@ import "../styles/AdModal.css";
 import ad from "../Images/ad.mp4";
 
 export default function Modal({ showModal, setShowModal }) {
+  /*
   function delay(n) {
     return new Promise(function (resolve) {
       setTimeout(resolve, n * 1000);
@@ -13,9 +14,26 @@ export default function Modal({ showModal, setShowModal }) {
     await delay(30000);
     alert("Timer complete");
   }
+  */
 
+  var timeLeft = 30;
+    var elem = document.getElementById('some_div');
+    
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (timeLeft == -1) {
+        //clearTimeout(timerId);
+        //doSomething();
+      } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+      }
+    }
 
+    //startTimer
 
+//alert("video complete.")
 
   return (
     <>
@@ -29,8 +47,8 @@ export default function Modal({ showModal, setShowModal }) {
               width="640"
               height="480"
               controls
-              onClick={startTimer}
-              onEnded={alert("video complete.")}
+              onClick={""}
+              onEnded={""}
             >
               <source src={ad} type="video/mp4"></source>
             </video>
