@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/AdModal.css";
 import ad from "../Images/ad.mp4";
 
-export default function Modal({ showModal, setShowModal }) {
+export default function AdModal({ showModal, setShowModal }) {
   /*
   function delay(n) {
     return new Promise(function (resolve) {
