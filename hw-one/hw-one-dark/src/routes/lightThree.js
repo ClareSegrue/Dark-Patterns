@@ -20,7 +20,7 @@ const LightThree = () => {
   const [showLoginModal, setShowLoginModal] = useState(true);
 
   const openLoginModal = () => {
-   
+    progressCounter++;
     setShowLoginModal((prev) => !prev);
   };
 

@@ -2,24 +2,50 @@ import React, { useState } from "react";
 import "../styles/LoginModal.css";
 import ad from "../Images/ad.mp4";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 export default function LoginModal({ showLoginModal, setShowLoginModal }) {
   var date = new Date();
   var time = date.toLocaleTimeString();
-  var midnight = new Date();
-  var midnight = midnight.setHours(24, 0, 0, 0);
-  var acceptableTime = false;
-  var accepted = false;
 
+  var midnight = date.setHours(23, 59, 59, 59);
 
+  var night;
+  var canSubmit = false;
+
+  if (time.includes("AM")) {
+    var night = false;
+    //parseTime();
+  } else if (time.includes("PM")) {
+    var night = true;
+    parseTime();
+  } else {
+    alert("error parsing time");
+  }
+
+  var getTimes = time.split(":");
+
+  //alert(getTimes);
+
+  async function parseTime() {
+    var hour = getTimes[0];
+    alert(hour);
+    
+    //if (getTimes[0] === '11' && night) {
+      //canSubmit = true;
+    //} else if(getTimes[0] === '12' && !night){
+      //canSubmit = true;
+    //}
+  }
+  //midnight = moment().startOf('day');
+
+  //var midnightFormatted = formatDate(midnight);
 
   const onSubmit = (e) => {
-    e.preventDefault();
-    
-    console.log("refresh prevented");
+    //e.preventDefault();
+    setShowLoginModal((prev) => !prev);
+    //console.log("refresh prevented");
   };
-
-
 
   return (
     <>
@@ -81,7 +107,11 @@ export default function LoginModal({ showLoginModal, setShowLoginModal }) {
                       ></input>
                     </div>
 
-                    <button class="accept-button" id="default-button">
+                    <button
+                      class="accept-button"
+                      id="default-button"
+                      onClick={() => setShowLoginModal((prev) => !prev)}
+                    >
                       submit
                     </button>
 
@@ -89,7 +119,9 @@ export default function LoginModal({ showLoginModal, setShowLoginModal }) {
                       *my checkmark here is equivalent to reciting this
                       incantation out loud
                     </div>
-                    <div className="time">{time}</div>
+                    <div className="time">
+                      {time} || {midnight.getDate}
+                    </div>
                   </form>
                 </div>
               </div>
