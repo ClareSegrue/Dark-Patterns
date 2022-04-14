@@ -7,11 +7,15 @@ import bronze from "../../Images/bronze.png";
 import Payment from "../../components/Payment.js";
 
 export default function Store() {
+  var gold;
+  var silver;
+  var bronze;
+
   return (
     <div className="App">
       <header className="App-header">
         <div className="button-container">
-          <Link to={{pathname: "/darkThree"}}>
+          <Link to={{pathname: "/darkThree" }}>
             <button className="dark-button" id="default-button">
               RETURN HOME
             </button>

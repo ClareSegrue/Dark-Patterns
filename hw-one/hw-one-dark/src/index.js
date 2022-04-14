@@ -20,6 +20,12 @@ import RechargeLIGHT from "./routes/light/rechargeLIGHT";
 import StoreLIGHT from "./routes/light/storeLIGHT";
 
 const rootElement = document.getElementById("root");
+
+const wallet = new Object();
+wallet.bronze = 30;
+wallet.silver = 30;
+wallet.gold = 30;
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>

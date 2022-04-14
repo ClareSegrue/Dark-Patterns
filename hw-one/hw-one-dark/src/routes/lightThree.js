@@ -5,35 +5,30 @@ import TopBanner from "../components/TopBanner";
 import gold from "../Images/gold.png";
 import silver from "../Images/silver.png";
 import bronze from "../Images/bronze.png";
-import AdModal from "../components/AdModal";
-import LoginModal from "../components/LoginModal";
+import Modal from "../components/AdModal";
 
 import React, { useState, Component } from "react";
 
-const LightThree = () => {
+const DarkThree = () => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
 
-  const [showLoginModal, setShowLoginModal] = useState(true);
-
-  const openLoginModal = () => {
-    progressCounter++;
-    setShowLoginModal((prev) => !prev);
-  };
-
   var progressCounter = 6;
-
+  
   const wallet = new Object();
   wallet.bronze = 30;
   wallet.silver = 30;
   wallet.gold = 30;
+  
+ 
+  var store = "/store?" + wallet.gold + "?" + wallet.silver + "?" + wallet.bronze;
 
-  var store =
-    "/store?" + wallet.gold + "?" + wallet.silver + "?" + wallet.bronze;
-
+  function Profile(){
+    const { handle } = useParams();
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -49,11 +44,7 @@ const LightThree = () => {
           <img src={logo} width="32" height="32" alt="x"></img>
         </div>
       </header>
-      <AdModal showModal={showModal} setShowModal={setShowModal} />
-      <LoginModal
-        showLoginModal={showLoginModal}
-        setShowLoginModal={setShowLoginModal}
-      />
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <div className="flex-table" id="gif-container">
         <div>
           <div className="flex-table">
@@ -61,10 +52,14 @@ const LightThree = () => {
               <div className="game">
                 <div className="parent">
                   <div id="row-layout-left">
-                    <button className="login" onClick={openLoginModal}>
-                      login bonus
-                    </button>
-
+                    <Link to="/loginBonus">
+                      <button
+                        className="login"
+                        onClick={(progressCounter = progressCounter + 1)}
+                      >
+                        login bonus
+                      </button>
+                    </Link>
                     <Link to={store}>
                       <button className="store">store</button>
                     </Link>
@@ -111,4 +106,4 @@ const LightThree = () => {
   );
 };
 
-export default LightThree;
+export default DarkThree;

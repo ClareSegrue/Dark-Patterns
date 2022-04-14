@@ -5,30 +5,51 @@ import TopBanner from "../components/TopBanner";
 import gold from "../Images/gold.png";
 import silver from "../Images/silver.png";
 import bronze from "../Images/bronze.png";
-import Modal from "../components/AdModal";
+import AdModal from "../components/AdModal";
+import LoginModal from "../components/LoginModal";
+import Ad from "../Images/coinAd.svg";
 
 import React, { useState, Component } from "react";
+const wallet = new Object();
+wallet.bronze = 30;
+wallet.silver = 30;
+wallet.gold = 30;
 
-const DarkThree = () => {
+const LightThree = () => {
   const [showModal, setShowModal] = useState(false);
+  var progressCounter = 6;
 
   const openModal = () => {
     setShowModal((prev) => !prev);
+    wallet.gold += 30;
+    alert(wallet.gold);
   };
 
-  var progressCounter = 6;
-  
-  const wallet = new Object();
-  wallet.bronze = 30;
-  wallet.silver = 30;
-  wallet.gold = 30;
-  
- 
-  var store = "/store?" + wallet.gold + "?" + wallet.silver + "?" + wallet.bronze;
+  const [showLoginModal, setShowLoginModal] = useState(true);
 
-  function Profile(){
-    const { handle } = useParams();
-  }
+  const incr = () => {
+    var progress = document.getElementById("p1").value;
+    document.getElementById("file").value = progress + 1;
+  };
+
+  
+  const openLoginModal = () => {
+    incr();
+    setShowLoginModal((prev) => !prev);
+  };
+
+  const updateWallet = (a, b, c) => {
+    openModal = !openModal;
+    //this.setState(wallet.gold + a, wallet.silver + b, wallet.bronze + c);
+    alert(wallet);
+  };
+
+
+  //const { wallet } = useParams();
+
+  var store =
+    "/store?" + wallet.gold + "?" + wallet.silver + "?" + wallet.bronze;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,22 +65,27 @@ const DarkThree = () => {
           <img src={logo} width="32" height="32" alt="x"></img>
         </div>
       </header>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <AdModal showModal={showModal} setShowModal={setShowModal} />
+      <LoginModal
+        showLoginModal={showLoginModal}
+        setShowLoginModal={setShowLoginModal}
+      />
       <div className="flex-table" id="gif-container">
         <div>
+          <Link to="/store">
+            <div id="coinAd">
+              <img src={Ad}></img>
+            </div>
+          </Link>
           <div className="flex-table">
             <div className="main-panel">
               <div className="game">
                 <div className="parent">
                   <div id="row-layout-left">
-                    <Link to="/loginBonus">
-                      <button
-                        className="login"
-                        onClick={(progressCounter = progressCounter + 1)}
-                      >
-                        login bonus
-                      </button>
-                    </Link>
+                    <button className="login" onClick={openLoginModal}>
+                      login bonus
+                    </button>
+
                     <Link to={store}>
                       <button className="store">store</button>
                     </Link>
@@ -106,4 +132,4 @@ const DarkThree = () => {
   );
 };
 
-export default DarkThree;
+export default LightThree;
