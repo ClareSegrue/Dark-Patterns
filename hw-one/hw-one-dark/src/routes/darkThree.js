@@ -42,6 +42,7 @@ const LightThree = () => {
     openModal = !openModal;
     //this.setState(wallet.gold + a, wallet.silver + b, wallet.bronze + c);
     //alert(wallet);
+    //tiny change
   };
 
 
