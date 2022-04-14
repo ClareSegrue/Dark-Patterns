@@ -1,8 +1,5 @@
 import React from "react";
 import "../styles/SkinModal.css";
-import ad from "../Images/ad.mp4";
-import { Alert } from "react-bootstrap";
-import TopBanner from "./TopBanner";
 import { Link } from "react-router-dom";
 
 export default function SkinModal({ showModal, setShowModal }) {

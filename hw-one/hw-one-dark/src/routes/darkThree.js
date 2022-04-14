@@ -22,7 +22,7 @@ const LightThree = () => {
   const openModal = () => {
     setShowModal((prev) => !prev);
     wallet.gold += 30;
-    alert(wallet.gold);
+    //alert(wallet.gold);
   };
 
   const [showLoginModal, setShowLoginModal] = useState(true);
@@ -41,7 +41,7 @@ const LightThree = () => {
   const updateWallet = (a, b, c) => {
     openModal = !openModal;
     //this.setState(wallet.gold + a, wallet.silver + b, wallet.bronze + c);
-    alert(wallet);
+    //alert(wallet);
   };
 
 

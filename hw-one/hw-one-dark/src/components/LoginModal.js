@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/LoginModal.css";
-import ad from "../Images/ad.mp4";
+
 import { Link } from "react-router-dom";
 import moment from "moment";
 

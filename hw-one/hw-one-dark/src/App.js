@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import logo from "./Images/star.png";
-import bgMusic from "./audio/game.wav";
+
 import soundOn from "./Images/soundOn.png";
 import soundOff from "./Images/soundOff.png";
 import Accordion from "./components/Accordion";
@@ -18,7 +18,7 @@ class App extends Component {
     this.silverCount = 30;
     this.bronzeCount = 76;
 
-    this.audio = new Audio(bgMusic);
+    //this.audio = new Audio(bgMusic);
     this.isPlaying = new Boolean(false);
     this.state = (
       <div id="black">
@@ -30,6 +30,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /*
   audioStarter() {
     if (this.isPlaying === false) {
       this.audio.volume = 0.0;
@@ -41,7 +42,7 @@ class App extends Component {
     }
   }
 
-  /*
+  
     audioStateManager() {
       if (this.isPlaying === true) {
         this.audio.pause = true;

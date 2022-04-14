@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/AdModal.css";
-import ad from "../Images/ad.mp4";
+
 import ReactPlayer from "react-player";
 
 export default function AdModal({ showModal, setShowModal }) {
