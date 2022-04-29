@@ -8,16 +8,20 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Privacy from "./routes/privacy";
 import Terms from "./routes/terms";
-import LightThree from "./routes/lightThree";
-import DarkThree from "./routes/darkThree";
 
-import LoginBonus from "./routes/dark/loginBonus";
-import Recharge from "./routes/dark/recharge";
-import Store from "./routes/dark/store";
+import LightFour from "./routes/four/lightFour";
+import DarkFour from "./routes/four/darkFour";
 
-import LoginBonusLIGHT from "./routes/light/loginBonusLIGHT";
-import RechargeLIGHT from "./routes/light/rechargeLIGHT";
-import StoreLIGHT from "./routes/light/storeLIGHT";
+import LightThree from "./routes/three/lightThree";
+import DarkThree from "./routes/three/darkThree";
+
+import LoginBonus from "./routes/three/dark/loginBonus";
+import Recharge from "./routes/three/dark/recharge";
+import Store from "./routes/three/dark/store";
+
+import LoginBonusLIGHT from "./routes/three/light/loginBonusLIGHT";
+import RechargeLIGHT from "./routes/three/light/rechargeLIGHT";
+import StoreLIGHT from "./routes/three/light/storeLIGHT";
 
 const rootElement = document.getElementById("root");
 
@@ -35,6 +39,9 @@ ReactDOM.render(
 
       <Route path="/lightThree" element={<LightThree />} />
       <Route path="/darkThree" element={<DarkThree />} />
+
+      <Route path="/lightFour" element={<LightFour />} />
+      <Route path="/darkFour" element={<DarkFour />} />
 
       <Route path="/loginBonus" element={<LoginBonus />} />
       <Route path="/recharge" element={<Recharge />} />

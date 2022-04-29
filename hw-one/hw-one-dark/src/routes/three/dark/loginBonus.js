@@ -1,8 +1,8 @@
-import "../../styles/App.css";
-import logo from "../../Images/star.png";
+import "../../../styles/App.css";
+import logo from "../../../Images/star.png";
 import { Link } from "react-router-dom";
 import React, { useState, Component } from "react";
-import Modal from "../../components/SkinModal";
+import Modal from "../../../components/SkinModal";
 
 const LoginBonus = () => {
   var date = new Date();

@@ -1,5 +1,5 @@
-import "../../styles/App.css";
-import logo from "../../Images/star.png";
+import "../../../styles/App.css";
+import logo from "../../../Images/star.png";
 import { Link } from "react-router-dom";
 
 export default function LoginBonusLIGHT() {

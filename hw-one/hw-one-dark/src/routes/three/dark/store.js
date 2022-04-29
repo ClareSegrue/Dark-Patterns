@@ -1,10 +1,10 @@
-import "../../styles/App.css";
-import logo from "../../Images/star.png";
+import "../../../styles/App.css";
+import logo from "../../../Images/star.png";
 import { Link } from "react-router-dom";
-import gold from "../../Images/gold.png";
-import silver from "../../Images/silver.png";
-import bronze from "../../Images/bronze.png";
-import Payment from "../../components/Payment.js";
+import gold from "../../../Images/gold.png";
+import silver from "../../../Images/silver.png";
+import bronze from "../../../Images/bronze.png";
+import Payment from "../../../components/Payment.js";
 
 export default function Store() {
   var gold;

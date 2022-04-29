@@ -1,13 +1,13 @@
-import "../../styles/App.css";
-import logo from "../../Images/star.png";
+import "../../../styles/App.css";
+import logo from "../../../Images/star.png";
 import { Link } from "react-router-dom";
 
-export default function RechargeLIGHT() {
+export default function Recharge() {
   return (
     <div className="App">
       <header className="App-header">
         <div className="button-container">
-          <Link to="/lightThree">
+          <Link to="/">
             <button className="dark-button" id="default-button">
               RETURN HOME
             </button>
@@ -21,7 +21,7 @@ export default function RechargeLIGHT() {
       <div className="flex-table" id="gif-container">
         <div className="main-panel">
         <div id="recharge">
-            <b>recharge LIGHT</b>
+            <b>recharge</b>
 
           </div>
         </div>
