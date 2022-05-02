@@ -1,6 +1,17 @@
 import "../../styles/App.css";
 import logo from "../../Images/star.png";
 import { Link, useHistory, useParams } from "react-router-dom";
+import pause from "../../Images/pause.png";
+import play from "../../Images/play.png";
+
+import backward from "../../Images/backward.png";
+import forward from "../../Images/forward.png";
+
+import trackOne from "../../audio/GoodDay.mp3";
+import trackTwo from "../../audio/TheOutside.mp3";
+import trackThree from "../../audio/MulberryStreet.mp3";
+import trackFour from "../../audio/NoChances.mp3";
+import trackFive from "../../audio/Redecorate.mp3";
 
 
 import React, { useState, Component } from "react";
@@ -8,23 +19,95 @@ import React, { useState, Component } from "react";
 const LightFour = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
-    //setShowModal((prev) => !prev);
+  const audio = new Audio();
+
+  const audioOne = new Audio(trackOne);
+  const audioTwo = new Audio(trackTwo);
+  const audioThree = new Audio(trackThree);
+  const audioFour = new Audio(trackFour);
+  const audioFive = new Audio(trackFive);
+
+
+  //const firstClick = new Boolean(true);
+  //var isPlaying = new Boolean(false);
+  var track = "No track selected.";
+
+  // used after song ends
+  const [isPlaying, setPlaying] = React.useState(false);
+  const togglePlaying = () => setPlaying(!isPlaying);
+
+  const [toggled, setToggled] = React.useState(false);
+  const toggleImage = () => {
+    setToggled(!toggled);
+    setPlaying(!isPlaying);
+  }
+
+  const [trackSelected, setTrack] = React.useState(false);
+  const toggleTrackSelected = () => setTrack(!trackSelected);
+
+  function setPlayState() {
+    if (trackSelected) {
+      audio.pause();
+      audio = new Audio(trackOne);
+      audio.play();
+      toggleImage();
+    } else {
+      alert("No track selected.");
+    }
+  }
+
+  function audioStarter() {
+    alert("reached start, should be false: " + trackSelected);
+    //toggleTrackSelected();
+
+    //alert("toggled track selected: " + trackSelected);
+    if (!isPlaying) {
+      audio.volume = 0.5;
+      audio.loop = true;
+      audio.play();
+    }
+
+    //togglePlaying();
+  }  
+  
+  function changeTrack(a){
+    //audio.pause();
+    audio = a;
+    track = "track selected";
+    toggleImage();
+    audioStarter();
+  };
+ /*
+  const changeTrack = (Audio) => {
+    audio = a;
+    track = "track selected";
+    toggleImage();
+    audioStarter();
   };
 
-/*   var progressCounter = 6;
 
-  const wallet = new Object();
-  wallet.bronze = 30;
-  wallet.silver = 30;
-  wallet.gold = 30;
 
-  var store =
-    "/store?" + wallet.gold + "?" + wallet.silver + "?" + wallet.bronze;
 
-  function Profile() {
-    const { handle } = useParams();
-  } */
+
+
+  const changeTrack = () => {
+    track = "track selected";
+    toggleImage();
+    audioStarter();
+  };
+
+ 
+  function audioStateManager(){
+    if (isPlaying) {
+      audio.pause = true;
+      audio.currentTime = 0;
+      isPlaying = false;
+    } else {
+      audio.volume = 0.6;
+    }
+   
+  };
+*/
   return (
     <div className="App">
       <header className="App-header">
@@ -36,20 +119,47 @@ const LightFour = () => {
           </Link>
         </div>
         <div className="header-title">
-          cob's soulo game.exe
+          soulifiy
           <img src={logo} width="32" height="32" alt="x"></img>
         </div>
       </header>
-      
+
       <div className="flex-table" id="gif-container">
         <div>
+          <div>
+            Genre: 
+            <select>
+              <option value="fruit">Rock</option>
+              <option value="vegetable">Alternative</option>
+              <option value="meat">Country</option>
+              <option value="meat">Pop</option>
+            </select>
+          </div>
           <div className="flex-table">
             <div className="main-panel">
-            light four
+              <div className="track" onClick={() => changeTrack(audioOne)}>
+                track one
+              </div>
+              <div className="track">track two</div>
+              <div className="track">track three</div>
+              <div className="track">track four</div>
+              <div className="track">track five</div>
             </div>
-            <div className="left-panel">
-             
-            </div>
+            <header className="bottom-header">
+              <div className="player">
+                <button id="default-button">
+                  <img src={backward} alt="pause" height="30px" />
+                </button>
+                <button id="default-button" onClick={setPlayState}>
+                  {toggled && <img src={pause} alt="pause" height="50px" />}
+                  {!toggled && <img src={play} alt="play" height="50px" />}
+                </button>
+                <button id="default-button">
+                  <img src={forward} alt="pause" height="30px" />
+                </button>
+              </div>
+              <div className="trackName">{track}</div>
+            </header>
           </div>
         </div>
       </div>

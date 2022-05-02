@@ -112,7 +112,7 @@ class App extends Component {
               name="psw"
               required
             ></input>
-            <Link to="/darkThree">
+            <Link to="/darkFour">
               <button type="submit" class="accept-button" id="default-button">
                 login
               </button>
@@ -179,7 +179,7 @@ class App extends Component {
                 </div>
               </Accordion>
             </div>
-            <Link to="/lightThree">
+            <Link to="/lightFour">
               <button type="submit" class="accept-button" id="default-button">
                 login
               </button>
@@ -271,7 +271,7 @@ class App extends Component {
             </button>
           </div>
           <div className="header-title">
-            cob's soulo game.exe
+            music.ly
             <img src={logo} width="32" height="32" alt="x"></img>
           </div>
         </header>

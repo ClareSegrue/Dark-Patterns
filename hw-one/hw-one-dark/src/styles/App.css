@@ -17,7 +17,42 @@ html, body {
   left:0px;
 
 }
+.player{
+  background-color: transparent;
+  padding-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 
+.trackName{
+display: flex;
+justify-content: center;
+color: white;
+padding-bottom: 10px;
+font-size: small;
+}
+
+.bottom-header {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  bottom: 0px;
+  background: rgb(0, 0, 0);
+  color: rgb(32, 32, 32);
+  font-size: calc(10px + 2vmin);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-style: solid;
+  border-width: 3px;
+  border-left-color: rgb(121, 137, 204);
+  border-bottom-color: rgb(8, 8, 24);
+  border-right-color: rgb(8, 8, 24);
+  border-top-color: rgb(121, 137, 204);
+}
 
 
 .App-logo {
@@ -38,7 +73,6 @@ html, body {
 
 #store{
   display: flex;
-
 }
 
 .App-header {
@@ -60,7 +94,32 @@ html, body {
 
 .button-container {
   display: flex;
+  flex-direction: row;
   width: 50%;
+  
+}
+
+.track{
+  transition: 1.5s;
+  display: flex;
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: rgba(13, 13, 26, 0.7);
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.track:hover{
+  transition: 1.5s;
+  box-shadow: 0px 0px 10px 3px rgb(121, 137, 204);
+  border-radius: 10px;
+  border-width: 0px;
+  border-color: rgb(121, 137, 204);
+  border-style: solid;
+  color: rgb(121, 137, 204);
+  background-color: rgba(13, 13, 26, 0.3);
 }
 
 .header-title {
@@ -100,6 +159,7 @@ html, body {
 }
 
 #default-button {
+  transition: 1.5s;
   color: rgba(rgb(211, 36, 109));
   padding: 5px;
   font-size: 14px;
@@ -117,6 +177,10 @@ html, body {
   background-color: rgba(13, 13, 26, 0.2);
   padding-left: 15px;
   padding-right: 15px;
+}
+
+#default-button:hover {
+
 }
 
 #default-button.dark-button {
@@ -169,8 +233,6 @@ html, body {
   background-color: rgba(13, 13, 26, 0.3);
 }
 
-#volume {
-}
 
 .light-button:hover {
   transition: 0.4s;
@@ -466,13 +528,18 @@ progress {
   border-width: 2px;
   border-color: black;
 }
+.Player{
+ display: flex;
+ background-color: black;
+}
 
 .main-panel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   min-width: 275px;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-width: 0px;
   border-style: dashed;
@@ -481,6 +548,7 @@ progress {
   border-radius: 3px;
   background-color: transparent;
   color: white;
+  
 }
 
 a {
