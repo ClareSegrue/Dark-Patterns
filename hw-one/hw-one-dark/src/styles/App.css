@@ -1,8 +1,8 @@
-html, body {
-  margin:0px;
-  height:100%;
+html,
+body {
+  margin: 0px;
+  height: 100%;
 }
-
 
 .App {
   justify-content: left;
@@ -10,15 +10,14 @@ html, body {
   background: rgb(36, 34, 34);
   padding-bottom: 20px;
   min-width: 800px;
-  position:absolute;
-  top:0px;
-  right:0px;
-  bottom:0px;
-  left:0px;
-
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
-.filter{
+.filter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,12 +25,10 @@ html, body {
   padding-bottom: 10px;
 }
 
-.filter-select{
 
-}
 
-select{
-  padding-left:5px;
+select {
+  padding-left: 5px;
   background-color: rgb(0, 0, 0, 0.4);
   color: white;
   border-radius: 5px;
@@ -39,20 +36,20 @@ select{
   font-family: "Courier New", Courier, monospace;
   width: 100px;
 }
-.player{
+.player {
   background-color: transparent;
-  
+
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-.trackName{
-display: flex;
-justify-content: center;
-color: white;
-padding-bottom: 10px;
-font-size: small;
+.trackName {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-bottom: 10px;
+  font-size: small;
 }
 
 .bottom-header {
@@ -75,7 +72,6 @@ font-size: small;
   border-top-color: rgb(121, 137, 204);
 }
 
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -92,7 +88,7 @@ font-size: small;
   color: rgba(255, 255, 255, 0.5);
 }
 
-#store{
+#store {
   display: flex;
 }
 
@@ -117,10 +113,9 @@ font-size: small;
   display: flex;
   flex-direction: row;
   width: 50%;
-  
 }
 
-.track{
+.track {
   transition: 1.5s;
   display: flex;
   height: 200px;
@@ -128,11 +123,17 @@ font-size: small;
   border-radius: 5px;
   background-color: rgba(13, 13, 26, 0.7);
   margin: 20px;
+  padding: 20px;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-size: larger;
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
+
 }
 
-.track:hover{
+.track:hover {
   transition: 1.5s;
   box-shadow: 0px 0px 10px 3px rgb(121, 137, 204);
   border-radius: 10px;
@@ -140,7 +141,8 @@ font-size: small;
   border-color: rgb(121, 137, 204);
   border-style: solid;
   color: rgb(121, 137, 204);
-  background-color: rgba(13, 13, 26, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
 }
 
 .header-title {
@@ -201,7 +203,6 @@ font-size: small;
 }
 
 #default-button:hover {
-
 }
 
 #default-button.dark-button {
@@ -254,7 +255,6 @@ font-size: small;
   background-color: rgba(13, 13, 26, 0.3);
 }
 
-
 .light-button:hover {
   transition: 0.4s;
   box-shadow: 0px 0px 10px 3px rgb(138, 138, 138);
@@ -271,9 +271,9 @@ font-size: small;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  height:90%;
+  height: 90%;
   color: white;
- 
+
   margin: 20px;
 }
 
@@ -490,36 +490,32 @@ h1 {
   letter-spacing: 5px;
 }
 
-.blah{
+.blah {
   width: "100%";
   height: "100px";
   background-color: black;
 }
 
-
 #gif-container {
   background-image: url("../Images/background-stars.gif");
   background-repeat: repeat;
-  background-size:auto;
+  background-size: auto;
 }
 
-
-
-#coinAd{
+#coinAd {
   display: flex;
-  min-height:fit-content;
+  min-height: fit-content;
   min-width: fit-content;
   justify-content: center;
-
 }
-#coinAd > img{
-    border-style: solid;
+#coinAd > img {
+  border-style: solid;
   border-width: 2px;
   border-left-color: rgb(8, 8, 24);
   border-bottom-color: rgb(211, 36, 109);
   border-right-color: rgb(211, 36, 109);
   border-top-color: rgb(8, 8, 24);
-  min-height:fit-content;
+  min-height: fit-content;
   min-width: fit-content;
 }
 
@@ -557,9 +553,9 @@ progress {
   border-width: 2px;
   border-color: black;
 }
-.Player{
- display: flex;
- background-color: black;
+.Player {
+  display: flex;
+  background-color: black;
 }
 
 .main-panel {
@@ -577,7 +573,6 @@ progress {
   border-radius: 3px;
   background-color: transparent;
   color: white;
-  
 }
 
 a {

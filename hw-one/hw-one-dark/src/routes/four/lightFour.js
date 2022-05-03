@@ -7,11 +7,7 @@ import play from "../../Images/play.png";
 import backward from "../../Images/backward.png";
 import forward from "../../Images/forward.png";
 
-import trackOne from "../../audio/GoodDay.mp3";
-import trackTwo from "../../audio/TheOutside.mp3";
-import trackThree from "../../audio/MulberryStreet.mp3";
-import trackFour from "../../audio/NoChances.mp3";
-import trackFive from "../../audio/Redecorate.mp3";
+
 
 
 import React, { useState, Component } from "react";
@@ -21,11 +17,7 @@ const LightFour = () => {
 
   const audio = new Audio();
 
-  const audioOne = new Audio(trackOne);
-  const audioTwo = new Audio(trackTwo);
-  const audioThree = new Audio(trackThree);
-  const audioFour = new Audio(trackFour);
-  const audioFive = new Audio(trackFive);
+
 
 
   //const firstClick = new Boolean(true);
@@ -39,7 +31,7 @@ const LightFour = () => {
   const [toggled, setToggled] = React.useState(false);
   const toggleImage = () => {
     setToggled(!toggled);
-    setPlaying(!isPlaying);
+    //setPlaying(!isPlaying);
   }
 
   const [trackSelected, setTrack] = React.useState(false);
@@ -48,7 +40,7 @@ const LightFour = () => {
   function setPlayState() {
     if (trackSelected) {
       audio.pause();
-      audio = new Audio(trackOne);
+      audio = new Audio();
       audio.play();
       toggleImage();
     } else {
@@ -137,7 +129,7 @@ const LightFour = () => {
           </div>
           <div className="flex-table">
             <div className="main-panel">
-              <div className="track" onClick={() => changeTrack(audioOne)}>
+              <div className="track" onClick={() => "nope"}>
                 track one
               </div>
               <div className="track">track two</div>
