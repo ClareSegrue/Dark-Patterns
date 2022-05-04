@@ -5,16 +5,21 @@ body {
 }
 
 .App {
-  justify-content: left;
+  display: flex;
+  justify-content: center;
   text-align: left;
-  background: rgb(36, 34, 34);
+  background: rgb(7, 6, 6);
   padding-bottom: 20px;
   min-width: 800px;
+  min-height: 100%;
   position: absolute;
   top: 0px;
   right: 0px;
-  bottom: 0px;
+
   left: 0px;
+  background: url("../Images/background.svg");
+  background-size: cover;
+
 }
 
 .filter {
@@ -24,8 +29,6 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
-
 
 select {
   padding-left: 5px;
@@ -38,10 +41,12 @@ select {
 }
 .player {
   background-color: transparent;
-
   display: flex;
   width: 100%;
   justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  box-shadow: 0px 10px 20px 10px rgb(255, 81, 0);
 }
 
 .trackName {
@@ -57,19 +62,13 @@ select {
   flex-direction: column;
   border-radius: 10px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   justify-content: center;
-  bottom: 0px;
+
   background: rgb(0, 0, 0);
   color: rgb(32, 32, 32);
   font-size: calc(10px + 2vmin);
-
-  border-style: none;
-  border-width: 3px;
-  border-left-color: rgb(121, 137, 204);
-  border-bottom-color: rgb(8, 8, 24);
-  border-right-color: rgb(8, 8, 24);
-  border-top-color: rgb(121, 137, 204);
+  left: 0px;
 }
 
 .App-logo {
@@ -95,6 +94,9 @@ select {
 .App-header {
   display: flex;
   flex-direction: row;
+  position: fixed;
+  left: 0px;
+  right: 0px;
   height: 50px;
   background: white;
   color: rgb(32, 32, 32);
@@ -103,10 +105,10 @@ select {
   padding-right: 20px;
   border-style: solid;
   border-width: 3px;
-  border-left-color: rgb(121, 137, 204);
-  border-bottom-color: rgb(8, 8, 24);
-  border-right-color: rgb(8, 8, 24);
-  border-top-color: rgb(121, 137, 204);
+  border-left-color: rgb(255, 102, 0);
+  border-bottom-color: rgb(73, 73, 73);
+  border-right-color: rgb(73, 73, 73);
+  border-top-color: rgb(255, 102, 0);
 }
 
 .button-container {
@@ -118,31 +120,37 @@ select {
 .track {
   transition: 1.5s;
   display: flex;
-  height: 200px;
-  width: 200px;
+  flex-direction: column;
+  height: 150px;
+  width: 150px;
   border-radius: 5px;
-  background-color: rgba(13, 13, 26, 0.7);
+  background-color: rgba(255, 102, 0, 0.3);
+  border-style: solid;
+  border-width: 1px;
+  border-left-color: rgb(255, 102, 0);
+  border-bottom-color: rgb(73, 73, 73);
+  border-right-color: rgb(73, 73, 73);
+  border-top-color: rgb(255, 102, 0);
   margin: 20px;
   padding: 20px;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: stretch;
   text-align: center;
-  font-size: larger;
+  font-size: normal;
   font-weight: 700;
   font-family: "Courier New", Courier, monospace;
-
 }
 
 .track:hover {
   transition: 1.5s;
-  box-shadow: 0px 0px 10px 3px rgb(121, 137, 204);
+  box-shadow: 0px 0px 10px 3px rgb(255, 102, 0);
   border-radius: 10px;
   border-width: 0px;
   border-color: rgb(121, 137, 204);
   border-style: solid;
   color: rgb(121, 137, 204);
-  background-color: rgba(255, 255, 255, 0.3);
-  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(0, 0, 0);
 }
 
 .header-title {
@@ -183,7 +191,7 @@ select {
 
 #default-button {
   transition: 1.5s;
-  color: rgba(rgb(211, 36, 109));
+  color: rgb(255, 102, 0);
   padding: 5px;
   font-size: 14px;
   min-width: 64px;
@@ -202,18 +210,15 @@ select {
   padding-right: 15px;
 }
 
-#default-button:hover {
-}
-
 #default-button.dark-button {
   font-family: "Courier New", Courier, monospace;
   font-weight: 700;
   border-style: solid;
   border-width: 3px;
-  border-left-color: rgb(121, 137, 204);
-  border-bottom-color: rgb(8, 8, 24);
-  border-right-color: rgb(8, 8, 24);
-  border-top-color: rgb(121, 137, 204);
+  border-left-color: rgb(255, 102, 0);
+  border-bottom-color: rgb(73, 73, 73);
+  border-right-color: rgb(73, 73, 73);
+  border-top-color: rgb(255, 102, 0);
 }
 
 #default-button.light-button {
@@ -221,10 +226,10 @@ select {
   font-weight: bold;
   border-style: solid;
   border-width: 3px;
-  border-left-color: rgb(121, 137, 204);
-  border-bottom-color: rgb(8, 8, 24);
-  border-right-color: rgb(8, 8, 24);
-  border-top-color: rgb(121, 137, 204);
+  border-left-color: rgb(255, 102, 0);
+  border-bottom-color: rgb(73, 73, 73);
+  border-right-color: rgb(73, 73, 73);
+  border-top-color: rgb(255, 102, 0);
 }
 
 .dark-button:hover {
@@ -271,6 +276,7 @@ select {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  padding-top: 30px;
   height: 90%;
   color: white;
 
@@ -298,18 +304,20 @@ select {
   min-width: 200px;
   padding: 20px;
   margin: 20px;
+  
 
   justify-content: center;
   color: rgb(8, 8, 24);
   font-size: calc(10px + 2vmin);
   border-style: solid;
   border-width: 2px;
-  border-left-color: rgb(8, 8, 24);
-  border-bottom-color: rgb(211, 36, 109);
-  border-right-color: rgb(211, 36, 109);
-  border-top-color: rgb(8, 8, 24);
+  border-left-color: rgb(73, 73, 73);
+  border-bottom-color: rgb(255, 81, 0);
+  border-right-color: rgb(255, 81, 0);
+  border-top-color: rgb(73, 73, 73);
   height: 100%;
   font-size: medium;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .left-panel > img {
@@ -426,7 +434,7 @@ button:hover {
   color: white;
   border-radius: 5px;
   padding: 15px;
-  margin: 5px;
+  margin: 20px;
   font-size: small;
 }
 
@@ -470,8 +478,26 @@ button:hover {
 }
 
 @media only screen and (max-width: 700px) {
+  .flex-table {
+    left: 0px;
+    transition: 1.5s;
+    flex-direction: column;
+  }
+
+  .main-panel {
+    display: flex;
+    flex-direction: column;
+    
+  }
   .left-panel {
-    display: none;
+    width: 400px;
+  }
+  .track {
+    height: 50px;
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-between;
+   
   }
 }
 
@@ -497,9 +523,7 @@ h1 {
 }
 
 #gif-container {
-  background-image: url("../Images/background-stars.gif");
-  background-repeat: repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 #coinAd {
@@ -573,6 +597,8 @@ progress {
   border-radius: 3px;
   background-color: transparent;
   color: white;
+  overflow-y: auto;
+  padding-bottom: 100px;
 }
 
 a {
