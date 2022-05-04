@@ -4,7 +4,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 
 import React, { useState, Component } from "react";
-import AudioPlayer from "../../components/SoundcloudPlayer";
+import AudioPlayer from "../../components/SoundcloudPlayerDark";
 
 const DarkFour = () => {
   //const firstClick = new Boolean(true);
