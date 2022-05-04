@@ -1,8 +1,7 @@
 import "./styles/App.css";
 import logo from "./Images/star.png";
 
-import soundOn from "./Images/soundOn.png";
-import soundOff from "./Images/soundOff.png";
+
 import Accordion from "./components/Accordion";
 import React, { Component } from "react";
 import TopBanner from "./components/TopBanner";
@@ -11,8 +10,8 @@ import { Link } from "react-router-dom";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.audioImages = [soundOn, soundOff];
-    this.audioImage = this.audioImages[0];
+
+
 
     this.goldCount = 40;
     this.silverCount = 30;
@@ -30,38 +29,9 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  /*
-  audioStarter() {
-    if (this.isPlaying === false) {
-      this.audio.volume = 0.0;
-      this.audio.loop = true;
-      this.audio.play();
-      this.isPlaying = true;
-    } else {
-      this.isPlaying = false;
-    }
-  }
 
-  
-    audioStateManager() {
-      if (this.isPlaying === true) {
-        this.audio.pause = true;
-        this.audio.currentTime = 0;
-        this.isPlaying = false;
-      } else {
-        this.audio.volume = .1;
-      }
-      //this.changeAudioImg();
-    }
-  */
 
-  changeAudioImg() {
-    if (document.getElementById("volume").src === soundOn) {
-      document.getElementById("volume").src = soundOff;
-    } else {
-      document.getElementById("volume").src = soundOn;
-    }
-  }
+
 
   handleChange(event) {
     this.setState({ value: event.target.value });
@@ -190,44 +160,8 @@ class App extends Component {
     );
   };
 
-  //deprecated
-  updateLightThree = () => {
-    this.audioStarter();
-    this.setState(
-      <div>
-        <div>LIGHT</div>
-        <div id="bottom-span">
-          <button
-            background={this.audioImage}
-            id="volume"
-            onClick={this.audioStateManager}
-          >
-            Sound
-          </button>
-        </div>
-      </div>
-    );
-  };
 
-  updateDarkThree = () => {
-    this.audioStarter();
-    this.setState(
-      <div className="flex-table">
-        <div className="main-panel">
-          <div className="game">
-            <TopBanner />
-            <iframe
-              width="800"
-              height="600"
-              src="https://www.addictinggames.com/embed/html5-games/23866"
-              scrolling="no"
-            ></iframe>
-          </div>
-        </div>
-        <div className="left-panel"></div>
-      </div>
-    );
-  };
+
 
   enterDark = () => {
     this.mode = false;
