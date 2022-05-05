@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/LoginModal.css";
 
 import { Link } from "react-router-dom";
-
+import moment from "moment";
 
 export default function LoginModal({ showLoginModal, setShowLoginModal }) {
   var date = new Date();
